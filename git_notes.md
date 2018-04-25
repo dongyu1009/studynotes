@@ -272,3 +272,10 @@ To delete a tag on a server(you need delete the local tag firstly):
 
 (6) clone the remote repository:
     git clone git@server:/srv/sample.git
+
+
+# Back to the commit on Github
+
+> git reset --hard HEAD <>
+> git push origin HEAD --force
+
