@@ -276,6 +276,7 @@ To delete a tag on a server(you need delete the local tag firstly):
 
 # Back to the commit on Github
 
-> git reset --hard HEAD <>
+> git reset --hard HEAD <commit_id>
+
 > git push origin HEAD --force
 
