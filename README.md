@@ -1,11 +1,21 @@
 # studynotes
 
-## git_notes.txt
+## git_notes.md
 
 This is a study note to learn git and github.
 
 It is just for common user, not for professional.
 
+## linux.md
+
+This is a study note to learn linux.
+
+Warnning: This is NOT finished.
+
+
+## linux_new_configration
+
+This is a readme file to illustrate how to config a new CentOS for GDAL
 =============================
 
 Contect Information: 

@@ -1,0 +1,43 @@
+#Config the Internet
+1. if this is working on a virtual mechine, please set the connecting mode to brige.
+2. vim the /etc/sysconfig/network-scripts/ifcfg-enp0s3 and set the ONBOOT to yes, like ONBOOT=yes
+3. restart the network using the clt: service network restart.
+4. check the network using ping command: ping www.baidu.com.
+5. check the ip address by using clt: ip addr.
+
+#Config the ssh service
+1. vim the /etc/ssh/sshd_config and set PasswordAuthentication to yes , PermitRootLogin to yes
+2. start/restart the ssh service using the clt: service sshd start/restart, and check the status using clt: service sshd status.
+3. to start the ssh service when computer start, using the clt: chkconfig sshd on
+
+#Config Yum Repos
+1. delete all files in the /etc/yum.repos.d directory.
+2. scp the repo file to the /etc/yum.repos.d directory.
+3. using the following ctl:
+    yum clean all
+    yum makecache
+    yum update
+
+#Set up the gcc-c++ developement tools
+    yum -y install gcc
+    yum -y install gcc-c++
+    yum -y install vim
+you may want to copy the .vimrc file to ~ directory
+
+#Set up the GDAL Environment
+1. download the gdal librarys :http://download.osgeo.org/gdal/ using the following clt:
+    wget http://download.osgeo.org/gdal/CURRENT/gdal-2.2.4.tar.gz
+    if there is no wget tools , using the following command to set up:
+        yum -y install wget
+
+2. unzip the tar.gz file using the clt: tar zxvf gdal-2.2.4.tar.gz
+3. go to the gdal-2.2.4 directory and using the clt: ./configure
+4. using the clt: make to compile the gdal libraries
+5. using the clt: make install to install the gdal libraries
+6. vim the ~/.bashrc and add the following lines:
+    export PATH=$PATH:/usr/local/bin
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+7. using the clt: source ~/.bashrc
+8. then you could use the gdal library. You need add -lgdal parameter when you compile the source file which use the gdal libraries.
+
+
