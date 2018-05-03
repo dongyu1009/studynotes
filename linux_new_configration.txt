@@ -25,6 +25,19 @@
 you may want to copy the .vimrc file to ~ directory
 
 #Set up the GDAL Environment
+## Set up GEOS and PROJ.4(Not nesseccary)
+
+./configure
+make
+make install
+
+if it shows "tar: bzip2: Cannot exec: No such file or directory"
+    yum install bzip2 -y
+    user tar jxvf ..tar.bz2
+
+if you have setted up the GEOS, you could see "GEOS support : yes" after you ./configure the GDAL.
+
+## Set up GDAL
 1. download the gdal librarys :http://download.osgeo.org/gdal/ using the following clt:
     wget http://download.osgeo.org/gdal/CURRENT/gdal-2.2.4.tar.gz
     if there is no wget tools , using the following command to set up:
@@ -39,5 +52,4 @@ you may want to copy the .vimrc file to ~ directory
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 7. using the clt: source ~/.bashrc
 8. then you could use the gdal library. You need add -lgdal parameter when you compile the source file which use the gdal libraries.
-
-
+    you could test if the gdal has been setted up by : gdalinfo.
