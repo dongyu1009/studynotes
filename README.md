@@ -16,6 +16,7 @@ Warnning: This is NOT finished.
 ## linux_new_configration
 
 This is a readme file to illustrate how to config a new CentOS for GDAL
+
 =============================
 
 Contect Information: 
