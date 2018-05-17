@@ -17,6 +17,10 @@ Warnning: This is NOT finished.
 
 This is a readme file to illustrate how to config a new CentOS for GDAL
 
+## bash shell directory
+
+Those are simple programs to study bash shell
+
 =============================
 
 Contect Information: 

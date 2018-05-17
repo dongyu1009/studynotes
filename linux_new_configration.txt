@@ -53,3 +53,14 @@ if you have setted up the GEOS, you could see "GEOS support : yes" after you ./c
 7. using the clt: source ~/.bashrc
 8. then you could use the gdal library. You need add -lgdal parameter when you compile the source file which use the gdal libraries.
     you could test if the gdal has been setted up by : gdalinfo.
+
+## How to share files in VirtualBox
+
+1. yum install -y gcc gcc-devel gcc-c++ gcc-c++-devel make kernel kernel-devel
+2. reboot 
+3. Open VitrualBox , Go to Device -> Insert Guest Additions CD image in the
+Menu.
+4. In the linux, mount /dev/cdrom /mnt
+5. Go to the /mnt, and ./VBoxLinuxAddtion.run
+6. Mount the cdrom by using the command:
+    mount -t vboxsf <shared_name> <monnt_dir>
