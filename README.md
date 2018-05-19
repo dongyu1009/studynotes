@@ -21,6 +21,10 @@ This is a readme file to illustrate how to config a new CentOS for GDAL
 
 Those are simple programs to study bash shell
 
+## latex_example
+
+examples and notes for study LaTeX.
+
 =============================
 
 Contect Information: 
