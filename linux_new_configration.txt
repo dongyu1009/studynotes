@@ -64,3 +64,8 @@ Menu.
 5. Go to the /mnt, and ./VBoxLinuxAddtion.run
 6. Mount the cdrom by using the command:
     mount -t vboxsf <shared_name> <monnt_dir>
+
+If something wrong happened like "unable to find the sources of your current Linux kernel." in the /var/log/vbox-install.log file, you may try this :
+1. yum install gcc kernal-devel kernal-headers
+2. export KERN_DIR=/usr/src/kernels/2.6.18-164.15.1.el5-i686/
+then, try ./VBoxLinuxAddtion.run
