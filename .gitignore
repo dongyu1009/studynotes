@@ -1,1 +1,14 @@
 *~
+*.aux
+*.log 
+*.nav
+*.out 
+*.bbl
+*.pdf
+*.snm
+*.synctex.gz
+*.toc
+*.bcf
+*.run.xml
+*.blg
+*.eps

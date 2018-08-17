@@ -69,3 +69,76 @@ If something wrong happened like "unable to find the sources of your current Lin
 1. yum install gcc kernal-devel kernal-headers
 2. export KERN_DIR=/usr/src/kernels/2.6.18-164.15.1.el5-i686/
 then, try ./VBoxLinuxAddtion.run
+
+
+## How to use shadowsocks and privoxy to set global http/https proxy
+
+1. install shadowsocks
+    pip install shadowsocks
+
+1.1 to install pip, following the instruction:
+    install python-dev : sudo yum install -y python-devel
+    install epel : yum install epel-release
+    install pip : yum install python-pip
+
+2. configure the shadowsocks
+
+vim /etc/shadowsocks.json and input the following configuration:
+
+{
+    "server" : "ss_server",
+    "server_port" : 7777,
+    "local_address" : "127.0.0.1",
+    "local_port" : 1080,
+    "password" : "PWD",
+    "method" : "aes-256-cfb",
+    "remarks" : ""
+
+}
+
+3. start and stop the shadowsocks client by:
+
+sslocal -c /etc/shadowsocks.json 
+sslocal -c /etc/shadowsocks.json -d start 
+sslocal -c /etc/shadowsocks.json -d stop
+sslocal -c /etc/shadowsocks.json -d restart 
+
+4. to set the shadowsocks autostart when the server started.
+
+vim /etc/rc.local and add the following before exit 0:
+
+    sudo sslocal -c /etc/shadowsocks.json -d start
+
+5. to test whether the shadowsocks works.
+
+curl --socks5 127.0.0.1:1080 http://httpbin.org/ip
+
+6. install the privoxy
+
+    yum install privoxy
+    systemctl start/enable privoxy
+
+7. configure the privoxy
+
+vim /etc/privoxy/config and modify:
+
+line 783: listen-address 127.0.0.1:8118
+line 1336: forward-socks5t / 127.0.0.1:1080 .
+
+vim /etc/profile and modify:
+
+export https_proxy=http://127.0.0.1:8118
+export http_proxy=http://127.0.0.1:8118
+export ftp_proxy=http://127.0.0.1:8118
+
+8. restart privoxy service:
+
+    systemctl restart privoxy
+    source /etc/profile
+
+9. to test if privoxy works :
+
+    curl http://www.google.com
+
+10. to set yum proxy :
+    proxy=http://127.0.0.1:8118/
