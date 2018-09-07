@@ -145,3 +145,13 @@ documentclass:
 
 在一个tex文档中，有且只有一个document环境.
 
+# How to put an animation into a beamer
+
+1. Please download and install ImageMagick with convert tools.
+2. "C:\Program Files\ImageMagick-7.0.7-Q16\convert.exe" animate.gif -coalesce a_%d.eps
+3. use the packages:
+\usepackage{graphicx}
+\usepackage{animate}
+4. use the following to insert animation:
+\animategraphics[autoplay,loop,controls,width=.7\textwidth,height=.7\textheight]{1}{a_}{0}{43} % 1 means image number per sec, 0-43 means the first and last number of images, a_ is the perfix
+
