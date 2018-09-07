@@ -45,6 +45,8 @@ if you have setted up the GEOS, you could see "GEOS support : yes" after you ./c
 
 2. unzip the tar.gz file using the clt: tar zxvf gdal-2.2.4.tar.gz
 3. go to the gdal-2.2.4 directory and using the clt: ./configure
+    if you wanna use gdal in python environment, please use the following:
+     ./configure --with-python
 4. using the clt: make to compile the gdal libraries
 5. using the clt: make install to install the gdal libraries
 6. vim the ~/.bashrc and add the following lines:
@@ -53,6 +55,17 @@ if you have setted up the GEOS, you could see "GEOS support : yes" after you ./c
 7. using the clt: source ~/.bashrc
 8. then you could use the gdal library. You need add -lgdal parameter when you compile the source file which use the gdal libraries.
     you could test if the gdal has been setted up by : gdalinfo.
+
+9. if you wanna use gdal in python, please use the following: 
+    cd ./swig/python in the gdal setup dir
+    python setup.py build
+    python setup.py install
+
+you may wanna try this to make sure your gdal-python has been installed
+currectly.
+
+    python 
+    from osgeo import gdal
 
 ## How to share files in VirtualBox
 
