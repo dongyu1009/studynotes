@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{subfigure}
 
 % ================= bibtex
 % \usepackage{netbib}
@@ -289,6 +290,41 @@
 	\centering % 居中
 	\includegraphics[height=2cm]{test}
 	\caption{\TeX 哈哈哈} \label{fig-image2}
+	\end{figure}
+	
+	
+	% subfig package is needed
+	\begin{figure}[h]
+		\centering 
+		\subfigure[草地资源供给量空间分布]{ 
+			\label{fig:capstd:a} %% label for first subfigure 
+			\includegraphics[width=6in]{test} 
+		} 
+		\subfigure[单位面积草地可供给量标准差]{ 
+			\label{fig:capstd:a} %% label for first subfigure 
+			\includegraphics[width=0.5\textwidth]{test} 
+		} 
+		\subfigure[单位草地面积供给量变异系数]{ 
+			\label{fig:capstd:b} %% label for second subfigure 
+			\includegraphics[width=0.5\textwidth]{test} 
+		} 
+		\label{fig:capstd} 
+		\caption{你好啊 啊}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{minipage}[t]{0.5\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{test}
+			\caption{fig1}
+			\label{fig:side:a}
+		\end{minipage}%
+		\begin{minipage}[t]{0.5\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{test}
+			\caption{fig2}
+			\label{fig:side:b}
+		\end{minipage}
 	\end{figure}
 
 	% 允许位置： 默认为tbp
