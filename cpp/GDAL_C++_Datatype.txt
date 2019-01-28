@@ -1,0 +1,15 @@
+GDAL中GDALDataType中值与其在C++中数据类型对应
+GDAL中的GDALDataType是一个枚举型，其中的值为：
+
+GDT_Unknown : 未知数据类型
+GDT_Byte : 8bit正整型 (C++中对应unsigned char)
+GDT_UInt16 : 16bit正整型 (C++中对应 unsigned short)
+GDT_Int16 : 16bit整型 (C++中对应 short 或 short int)
+GDT_UInt32 : 32bit 正整型 (C++中对应unsigned long)
+GDT_Int32 : 32bit整型 (C++中对应int 或 long 或 long int)
+GDT_Float32 : 32bit 浮点型 (C++中对应float)
+GDT_Float64 : 64bit 浮点型 (C++中对应double)
+GDT_CInt16 : 16bit复整型 (?)
+GDT_CInt32 : 32bit复整型 (?)
+GDT_CFloat32 : 32bit复浮点型 (?)
+GDT_CFloat64 : 64bit复浮点型 (?)
